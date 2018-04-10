@@ -11,8 +11,8 @@ let log = (message, data) => {
     console.log(message, data)
 }
 
-class Classroom{
-    constructor(student){
+class Classroom {
+    constructor(student) {
         this.students += student
         this.listOfStudents = []
         this.date = Date.now()
@@ -35,15 +35,18 @@ app.use(express.static('public'));
 
 // Routing
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname+'/views/index.html'))
+    res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
 app.get('/manage', (req, res) => {
     let classroom1 = new Classroom('Kevin')
     res.send(classroom1.listOfStudents)
-
 })
 
+
+app.get('/job', (req, res)=>{
+    res.sendFile(path.join(__dirname + '/views/job.html'))
+})
 
 
 

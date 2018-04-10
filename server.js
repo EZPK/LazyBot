@@ -105,6 +105,13 @@ class Student{
     }
 } 
 
+let students = []
+let student1 = new Student(1,'Duchemin', 'Henry', '7 rue des Pommiers 5874 Benzagte', 'duchemin.henry@gmail.com', '071648571', 'Guillaume DUrant', 'init', 'Envoyer des mails à son petit fils', 'http://c7.alamy.com/comp/AKMH7E/angry-grumpy-old-man-shaking-his-fist-at-the-world-AKMH7E.jpg')
+let student2 = new Student(2,'Gonrieux', 'Adeline', '73 chaussée des viroilins 6358 Rozenrée', 'fleurbleu@yahoo.be', '096756321', 'Jacques Dugenoux', 'init', 'Régler ses factures + aller sur youtube', 'https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fold-dangerous-woman-57c8ec93ed21e.jpeg')
+let student3 = new Student(3,'Bozon', 'Ludovique', '12 rue des breaux 2593 Sol-en-Sursis', 'geekzor@gmail.com', '052689942', 'Maman', 'dev', 'Jeu vidéo', 'http://staloa.free.fr/images/tronche-de-geek.jpg' )
+let student4 = new Student(4, 'Barion', 'Remy', '33 rue du canard 7462 Bol-aux-riz', 'henryLeMalin@hotmail.com', '079633258', 'Son épouse monique', 'dev', 'coder un compilateur en fortran', 'http://img.4plebs.org/boards/tv/image/1411/03/1411032626040.png' )
+students.push(student1, student2, student3, student4)
+
 
 //Config
 app.use(express.static('public'));
@@ -146,20 +153,14 @@ app.get('/students', (req, res)=>{
     // let arg2 = ['Gonrieux', 'Adeline', '73 chaussée des viroilins 6358 Rozenrée', 'fleurbleu@yahoo.be', '096756321', 'Jacques Dugenoux', 'init', 'Régler ses factures + aller sur youtube']
     // let arg3 = ['Bozon', 'Ludovique', '12 rue des breaux 2593 Sol-en-Sursis', 'geekzor@gmail.com', '052689942', 'Maman', 'dev', 'Jeu vidéo' ]
 
-    let student1 = new Student(1,'Duchemin', 'Henry', '7 rue des Pommiers 5874 Benzagte', 'duchemin.henry@gmail.com', '071648571', 'Guillaume DUrant', 'init', 'Envoyer des mails à son petit fils', 'http://c7.alamy.com/comp/AKMH7E/angry-grumpy-old-man-shaking-his-fist-at-the-world-AKMH7E.jpg')
-    let student2 = new Student(2,'Gonrieux', 'Adeline', '73 chaussée des viroilins 6358 Rozenrée', 'fleurbleu@yahoo.be', '096756321', 'Jacques Dugenoux', 'init', 'Régler ses factures + aller sur youtube', 'https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fold-dangerous-woman-57c8ec93ed21e.jpeg')
-    let student3 = new Student(3,'Bozon', 'Ludovique', '12 rue des breaux 2593 Sol-en-Sursis', 'geekzor@gmail.com', '052689942', 'Maman', 'dev', 'Jeu vidéo', 'http://staloa.free.fr/images/tronche-de-geek.jpg' )
-    let student4 = new Student(4, 'Barion', 'Remy', '33 rue du canard 7462 Bol-aux-riz', 'henryLeMalin@hotmail.com', '079633258', 'Son épouse monique', 'dev', 'coder un compilateur en fortran', 'http://img.4plebs.org/boards/tv/image/1411/03/1411032626040.png' )
-    let students = []
-
-    students.push(student1, student2, student3, student4)
+   
     console.log(students)
 
     res.render('students', {students: students})
 })
 
 app.get('/students/:id', (req, res)=> {
-    res.render('student', {student: req.params.id})
+    res.render('student', {student: students[req.params.id]})
 })
 
 // Running

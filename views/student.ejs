@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LazyBot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/bulma.css" />
-</head>
-
-<body>
+    <title>Blog - Free Bulma template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.6.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" integrity="sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=" crossorigin="anonymous" /><link rel="stylesheet" type="text/css" href="../css/blog.css">
+  </head>
+  <body>
         <nav class="navbar is-dark">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
-                            width="28" height="28">
-                    </a>
-                    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                  <a class="navbar-item" href="/">
+                    <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
+                      width="28" height="28">
+                  </a>
+                  <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
-        
+            
                 <div id="navbarExampleTransparentExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="/job">
-                            Job
+                  <div class="navbar-start">
+                    <a class="navbar-item" href="/job">
+                      Job
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                      <a class="navbar-link" href="/cours">
+                        Cours
+                      </a>
+                      <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="/cours/dev">
+                          Développement Web
                         </a>
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link" href="/cours">
-                                Cours
-                            </a>
-                            <div class="navbar-dropdown is-boxed">
-                                <a class="navbar-item" href="/cours/dev">
-                                    Développement Web
-                                </a>
-                                <a class="navbar-item" href="/cours/init">
-                                    Initiation à l'informatique
-                                </a>
-                            </div>
-                        </div>
-                        <a class="navbar-item" href="/students">
-                          Elèves
+                        <a class="navbar-item" href="/cours/init">
+                          Initiation à l'informatique
                         </a>
+                      </div>
                     </div>
+                    <a class="navbar-item" href="/students">
+                      Elèves
+                    </a>
+                  </div>
                 </div>
-            </nav>
-
-    <div class="column">
-        <ul>
-            <li><%= student %></li>
-        </ul>
-    </div>
-
-
-</body>
-
-</html>
+              </nav>
+    <div class="container">
+      <!-- START ARTICLE FEED -->
+      <section class="articles">
+        <div class="column is-8 is-offset-2">
+          <!-- START ARTICLE -->
+          <div class="card article">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-center">
+                  <img src="<%= student.img %>" class="author-image" alt="Placeholder image">
+                </div>
+                <div class="media-content">
+                  <p class="title article-title"><%= student.name %></p>
+                  <p class="subtitle is-6 article-subtitle"><%= student.firstname %></p>
+                  <p class="subtitle is-6 article-content">Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque puru</p>
+                </div>
+              </div>
+              <div class="content article-body">
+                <p>Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. </p>
+                <p>Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Accumsan lacus vel facilisis volutpat. Non sodales neque sodales ut etiam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.</p>
+                <h3 class="has-text-centered">Feugiat sed lectus vestibulum mattis.</h3>
+                <p> Molestie ac feugiat sed lectus vestibulum. Feugiat sed lectus vestibulum mattis. Volutpat diam ut venenatis tellus in metus vulputate. Feugiat in fermentum posuere urna nec. Pharetra convallis posuere morbi leo urna molestie at. Accumsan lacus vel facilisis volutpat est velit egestas. Fermentum leo vel orci porta. Faucibus interdum posuere lorem ipsum.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- END ARTICLE -->
+      
+        </section>
+        <!-- END ARTICLE FEED -->
+      </div>
+      <script async type="text/javascript" src="../js/bulma.js"></script>
+    </body>
+  </html>

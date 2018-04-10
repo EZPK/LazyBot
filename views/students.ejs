@@ -2,103 +2,100 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LazyBot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/bulma.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LazyBot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/bulma.css" />
 </head>
 
 <body>
-    <nav class="navbar is-dark">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
-                    width="28" height="28">
-            </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="/job">
-                    Job
-                </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/cours">
-                        Cours
-                    </a>
-                    <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item" href="/cours/dev">
-                            Développement Web
-                        </a>
-                        <a class="navbar-item" href="/cours/init">
-                            Initiation à l'informatique
-                        </a>
-                    </div>
-                </div>
-                <a class="navbar-item" href="/students">
-                  Elèves
-                </a>
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="columns">
-        <% students.forEach((student, index) => {  %>
-        <a class="column" href="/students/<%= index %>">
-            <div >
-                <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-4by3">
-                            <img src="<%= student.img %>" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-left">
-                              <figure class="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="media-content">
-                              <p class="title is-5">  <%= student.name %></p>
-                              <p class="subtitle is-6">  <%= student.firstname %></p>
-      
-                              <span class="tag is-primary">
-                                  <%= student.mail %>
-                              </span>
-                              <br>
-                              <span class="tag is-info">
-                                  <%= student.classe %>
-                              </span>
-                              <br>
-                              <span class="tag is-warning">
-                                  <%= student.tel %>
-                              </span>
-      
-      
-                            </div>
-                          </div>
-                      
-                          <div class="content">
-                            <p><%= student.needs %></p>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                          </div>
-                        </div>
-                      </div>
-              </div>
-        </a>
-    
-        <% })  %>
-
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
+          width="28" height="28">
+      </a>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/job">
+          Job
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="/cours">
+            Cours
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="/cours/dev">
+              Développement Web
+            </a>
+            <a class="navbar-item" href="/cours/init">
+              Initiation à l'informatique
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item" href="/students">
+          Elèves
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-info is-bold is-fluid">
+    <div class="hero-body">
+      <div class="columns">
+        <% students.forEach((student, index) => {  %>
+          <a class="column" href="/students/<%= index %>">
+            <div>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="<%= student.img %>" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-5">
+                    <%= student.name %>
+                  </p>
+                  <p class="subtitle is-6">
+                    <%= student.firstname %>
+                  </p>
+
+                  <span class="tag is-primary">
+                    <%= student.mail %>
+                  </span>
+                  <br>
+                  <span class="tag is-info">
+                    <%= student.classe %>
+                  </span>
+                  <br>
+                  <span class="tag is-warning">
+                    <%= student.tel %>
+                  </span>
+                  <div class="content">
+                    <p>
+                      <%= student.needs %>
+                    </p>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        <% })  %>
+      </div>
+    </div>
+
+  </section>
+
 
 
 </body>

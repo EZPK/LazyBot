@@ -1,3 +1,10 @@
 <% include header %>
-<h1>Cours</h1>
+<div class="margedCarre">
+    <h1>Cours</h1>
+    <%if (type != null) {%>
+        <%= type %>
+    <% } else { %>
+        <%= type %>
+    <% } %>
+</div>
 <% include footer %>

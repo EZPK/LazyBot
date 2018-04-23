@@ -11,23 +11,25 @@ let log = (message, data) => {
     console.log(message, data)
 }
 
-class Classroom {
-    constructor(student) {
-        this.students += student
-        this.listOfStudents = []
-        this.date = Date.now()
-    }
+// class Classroom {
+//     constructor(student) {
+//         this.students += student
+//         this.listOfStudents = []
+//         this.date = Date.now()
+//     }
 
-    get ListOfStudents() {
-        return this.listOfStudents
-    }
-    get StudentNumber() {
-        return this.listOfStudents.length
-    }
-    addStudent() {
-        listOfStudents.push(student)
-    }
-}
+//     get ListOfStudents() {
+//         return this.listOfStudents
+//     }
+//     get StudentNumber() {
+//         return this.listOfStudents.length
+//     }
+//     addStudent() {
+//         listOfStudents.push(student)
+//     }
+// }
+
+const classroom = require('./modeles/classroom')
 
 class Student{
     constructor(id, name, firstname, adress, mail, tel, helper, classe, needs, img) {
@@ -128,7 +130,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/manage', (req, res) => {
-    let classroom1 = new Classroom('Kevin')
+    let classroom1 = new classroom('Kevin')
     res.send(classroom1.listOfStudents)
 })
 

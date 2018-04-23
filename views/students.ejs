@@ -2,7 +2,7 @@
 <section class="hero is-info is-bold is-fluid">
   <div class="hero-body">
     <button class="button is-success is-grouped marged">
-        <a href="/create-student">Add student</a>
+        <a href="/create-student">+1 Merdeux</a>
     </button>
     <div class="columns  is-multiline">
       <% students.forEach((student, index) => {  %>
@@ -17,41 +17,37 @@
 
                   <%if (student.img) {%>
                     <img src="<%= student.img %>" alt="Placeholder image">
-                    <button class="has-text-right delete is-large"></button>
+                    <button class="delete is-large"></button>
 
                   <% } else { %>
                     <img src="https://cde.peru.com//ima/0/1/4/3/3/1433061/611x458/google-translate-trololo-song-google.jpg" alt="Placeholder image">
-                    <button class="has-text-right delete is-large "></button>
+                    <button class="delete is-large "></button>
                   <% } %>
                 </figure>
 
               </div>
               <div class="card-content">
-                <span class="tag is-primary">
-                  Nom: <%= student.name %>
+                <span>
+                  <p class="tag is-primary"><b>Nom: </b></p> <%= student.name %> 
                 </span>
                 <br>
-                <span class="tag is-primary">
-                  Prénom: <%= student.firstname %>
+                <span>
+                  <p class="tag is-primary"><b>Prénom: </b></p> <%= student.firstname %> 
                 </span>
                 <br>
-                <span class="tag is-primary">
-                  Mail: <%= student.mail %>
+                <span >
+                  <p class="tag is-primary"><b>Mail: </b></p> <%= student.mail %> 
                 </span>
                 <br>
-                <span class="tag is-info">
-                  Classe: <%= student.classe %>
+                <span>
+                  <p class="tag is-primary"><b>Classes: </b></p> <%= student.classe %> 
                 </span>
                 <br>
-                <span class="tag is-warning">
-                  Tel: <%= student.tel %>
+                <span>
+                  <p class="tag is-primary"><b>Tel: </b></p> <%= student.tel %> 
                 </span>
                 <br>
-                <span class="tag is-danger">
-                    Motivation: <%= student.needs %>
-                </span>
-                <br>
-                <time><%= new Date() %>></time>
+                <time><i><%= new Date().toDateString() %></i></time>
               </div>
             </div>
           </div>

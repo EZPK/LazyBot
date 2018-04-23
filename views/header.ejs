@@ -11,43 +11,41 @@
 
 </head>
 
-<body>
-    <div class="is-fullheight">
-        <nav class="navbar is-dark">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
-                        width="28" height="28">
-                </a>
-                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+<body class="is-fullheight is-info">
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
+                    width="28" height="28">
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+        </div>
 
-            <div id="navbarExampleTransparentExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/job">
-                        Job
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/job">
+                    Job
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/cours">
+                        Cours
                     </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="/cours">
-                            Cours
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="/cours/dev">
+                            Développement Web
                         </a>
-                        <div class="navbar-dropdown is-boxed">
-                            <a class="navbar-item" href="/cours/dev">
-                                Développement Web
-                            </a>
-                            <a class="navbar-item" href="/cours/init">
-                                Initiation à l'informatique
-                            </a>
-                        </div>
+                        <a class="navbar-item" href="/cours/init">
+                            Initiation à l'informatique
+                        </a>
                     </div>
-                    <a class="navbar-item" href="/students">
-                        Elèves
-                    </a>
                 </div>
+                <a class="navbar-item" href="/students">
+                    Elèves
+                </a>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>

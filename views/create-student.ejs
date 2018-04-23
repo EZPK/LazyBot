@@ -1,0 +1,144 @@
+<% include header %>
+    <div class="container">
+        <form action="/create-student" method="POST">
+            <div class="container">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Nom</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="name" name="name" class="input" type="text" placeholder="Nom">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Prénom</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="firstname" name="firstname" class="input" type="text" placeholder="Prénom">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Adresse</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="adress" name="adress" class="input" type="text" placeholder="Prénom">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Mail</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="mail" name="mail" class="input" type="text" placeholder="Mail">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Tel</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="number" name="number" class="input" type="text" placeholder="Number">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Contact</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="contact" name="contact" class="input" type="text" placeholder="contact">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Classe</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <div class="select is-multiple">
+                                    <select multiple size="2" name="classe">
+                                        <option name="dev" value="dev">Web développement</option>
+                                        <option name="init" value="init">Initiation à l'informatique</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Motivations</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <textarea name="motivation" class="textarea" placeholder="Motivations"></textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Img</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <div class="file">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-link">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <% include footer %>

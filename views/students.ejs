@@ -1,103 +1,63 @@
-<!DOCTYPE html>
-<html>
+<% include header %>
+<section class="hero is-info is-bold is-fluid">
+  <div class="hero-body">
+    <button class="button is-success is-grouped marged">
+        <a href="/create-student">Add student</a>
+    </button>
+    <div class="columns  is-multiline">
+      <% students.forEach((student, index) => {  %>
+        <a class="column is-one-quarter" href="/students/<%= index %>">
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>LazyBot</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="/css/bulma.css" />
-</head>
+          <div>
+            <div class="card">
 
-<body>
-  <nav class="navbar is-dark">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="https://static1.squarespace.com/static/503ac990c4aa8e4885d5faec/t/58a382463a04113638f97f1d/1521733705290/" alt="Bulma: a modern CSS framework based on Flexbox"
-          width="28" height="28">
-      </a>
-      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+              <div class="card-image">
 
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/job">
-          Job
-        </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="/cours">
-            Cours
-          </a>
-          <div class="navbar-dropdown is-boxed">
-            <a class="navbar-item" href="/cours/dev">
-              Développement Web
-            </a>
-            <a class="navbar-item" href="/cours/init">
-              Initiation à l'informatique
-            </a>
-          </div>
-        </div>
-        <a class="navbar-item" href="/students">
-          Elèves
-        </a>
-      </div>
-    </div>
-  </nav>
+                <figure class="image is-4by3">
 
-  <section class="hero is-info is-bold is-fluid">
-    <div class="hero-body">
-      <div class="columns">
-        <% students.forEach((student, index) => {  %>
-          <a class="column" href="/students/<%= index %>">
-            <div>
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
+                  <%if (student.img) {%>
                     <img src="<%= student.img %>" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title is-5">
-                    <%= student.name %>
-                  </p>
-                  <p class="subtitle is-6">
-                    <%= student.firstname %>
-                  </p>
+                    <button class="has-text-right delete is-large"></button>
 
-                  <span class="tag is-primary">
-                    <%= student.mail %>
-                  </span>
-                  <br>
-                  <span class="tag is-info">
-                    <%= student.classe %>
-                  </span>
-                  <br>
-                  <span class="tag is-warning">
-                    <%= student.tel %>
-                  </span>
-                  <div class="content">
-                    <p>
-                      <%= student.needs %>
-                    </p>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
+                  <% } else { %>
+                    <img src="https://cde.peru.com//ima/0/1/4/3/3/1433061/611x458/google-translate-trololo-song-google.jpg" alt="Placeholder image">
+                    <button class="has-text-right delete is-large "></button>
+                  <% } %>
+                </figure>
+
+              </div>
+              <div class="card-content">
+                <span class="tag is-primary">
+                  Nom: <%= student.name %>
+                </span>
+                <br>
+                <span class="tag is-primary">
+                  Prénom: <%= student.firstname %>
+                </span>
+                <br>
+                <span class="tag is-primary">
+                  Mail: <%= student.mail %>
+                </span>
+                <br>
+                <span class="tag is-info">
+                  Classe: <%= student.classe %>
+                </span>
+                <br>
+                <span class="tag is-warning">
+                  Tel: <%= student.tel %>
+                </span>
+                <br>
+                <span class="tag is-danger">
+                    Motivation: <%= student.needs %>
+                </span>
+                <br>
+                <time><%= new Date() %>></time>
               </div>
             </div>
-          </a>
-        <% })  %>
-      </div>
+          </div>
+        </a>
+      <% })  %>
     </div>
-
-  </section>
-
-
-
-</body>
-
-</html>
+  </div>
+</section>
+<% include footer %>

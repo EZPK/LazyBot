@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const bodyParser = require('body-parser')
 
 const port = 7777
 
@@ -114,8 +115,11 @@ students.push(student1, student2, student3, student4)
 
 
 //Config
-app.use(express.static('public'));
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 app.set('view engine', 'ejs')
+
 
 
 // Routing
@@ -153,15 +157,23 @@ app.get('/students', (req, res)=>{
     // let arg2 = ['Gonrieux', 'Adeline', '73 chaussée des viroilins 6358 Rozenrée', 'fleurbleu@yahoo.be', '096756321', 'Jacques Dugenoux', 'init', 'Régler ses factures + aller sur youtube']
     // let arg3 = ['Bozon', 'Ludovique', '12 rue des breaux 2593 Sol-en-Sursis', 'geekzor@gmail.com', '052689942', 'Maman', 'dev', 'Jeu vidéo' ]
 
-   
-    console.log(students)
-
     res.render('students', {students: students})
 })
 
 app.get('/students/:id', (req, res)=> {
     res.render('student', {student: students[req.params.id]})
 })
+
+app.get('/create-student', (req, res)=> {
+    res.render('create-student', req.body)
+})
+
+app.post('/create-student', (req, res)=>{
+    let stud = new Student(students.length,req.body.name, req.body.firstname, req.body.adress, req.body.mail, req.body.tel, req.body.contact, req.body.classe, req.body.motivation)
+    students.push(stud)
+    res.render('students', {students:students})
+})
+
 
 // Running
 app.listen(port, () => {
